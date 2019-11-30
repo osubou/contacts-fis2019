@@ -24,9 +24,8 @@ app.get(BASE_API_PATH + "/contacts",(req,res)=>{
 
 app.post(BASE_API_PATH +"/contacts",(req,res)=>{
     console.log(Date() +"- POST/contacts");
-    var contact=req.body;
-   
-    db.insert(contact, (err)=>{
+    var contact= req.body;
+    db.insert(contact, (err) => {
         if(err){
             console.log(Date() + "-" + err);
             res.sendStatus(500);
